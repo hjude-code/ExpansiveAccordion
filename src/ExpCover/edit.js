@@ -38,6 +38,7 @@ export default function Edit({attributes, setAttributes}) {
 		'--minSize':attributes.minSize,
 		'--alignItems':attributes.alignItems,
 		'--justifyContent':attributes.justifyContent,
+		'--contentGrow':attributes.contentGrow,
 	}
 
 	const blockProps = useBlockProps();
@@ -68,6 +69,14 @@ export default function Edit({attributes, setAttributes}) {
 							/>
 						</PanelRow>
 					</PanelBody>
+					<PanelBody title="content grow" initialOpen={false}>
+						<PanelRow >
+							<RangeControl
+								value={attributes.contentGrow}
+								onChange={ ( newValue ) => setAttributes({contentGrow:newValue}) }
+							/>
+						</PanelRow>
+					</PanelBody>
 					<PanelBody title="item alignment" initialOpen={false}>
 						<PanelRow >
 							<SelectControl
@@ -75,7 +84,8 @@ export default function Edit({attributes, setAttributes}) {
 								options={[
 									{label:'start', value:'start'},
 									{label:'end', value:'end'},
-									{label:'center', value:'center'}
+									{label:'center', value:'center'},
+									{label:'stretch', value:'stretch'}
 								]}
 								onChange={ ( newAlign ) => setAttributes({alignItems:newAlign}) }
 							/>

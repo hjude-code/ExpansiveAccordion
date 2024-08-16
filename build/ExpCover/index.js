@@ -64,7 +64,8 @@ function Edit({
   const styleVars = {
     '--minSize': attributes.minSize,
     '--alignItems': attributes.alignItems,
-    '--justifyContent': attributes.justifyContent
+    '--justifyContent': attributes.justifyContent,
+    '--contentGrow': attributes.contentGrow
   };
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   // const innerBlocksProps = useInnerBlocksProps({ ...blockProps }, {});
@@ -112,6 +113,17 @@ function Edit({
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "content grow",
+          initialOpen: false,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+              value: attributes.contentGrow,
+              onChange: newValue => setAttributes({
+                contentGrow: newValue
+              })
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "item alignment",
           initialOpen: false,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
@@ -126,6 +138,9 @@ function Edit({
               }, {
                 label: 'center',
                 value: 'center'
+              }, {
+                label: 'stretch',
+                value: 'stretch'
               }],
               onChange: newAlign => setAttributes({
                 alignItems: newAlign
@@ -322,7 +337,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"},"justifyContent":{"type":"string","default":"start"}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"},"justifyContent":{"type":"string","default":"start"},"contentGrow":{"type":"number","default":0}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

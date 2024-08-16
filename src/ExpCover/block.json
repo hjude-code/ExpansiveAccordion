@@ -53,7 +53,12 @@
 		"justifyContent":{
 			"type":"string",
 			"default":"start"
+		},
+		"contentGrow":{
+			"type":"number",
+			"default":0
 		}
+		
 	},
 	"textdomain": "expansiveaccorion",
 	"editorScript": "file:./index.js",

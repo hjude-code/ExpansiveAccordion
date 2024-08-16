@@ -5,15 +5,19 @@
   transition: flex-grow var(--transTime) var(--transEase);
   flex-grow: 1;
   margin: 0;
-  width: 100%;
   height: var(--minSize);
   min-height: var(--minSize);
   font-size: 3em;
   display: flex;
   align-items: var(--alignItems) !important;
   justify-content: var(--justifyContent) !important;
+  flex-direction: column;
 }
 
 .wp-block-exp-acc-exp-container:has(.is-panel-open) .wp-block-exp-acc-exp-cover {
   flex-grow: 0;
+}
+
+.wp-block-exp-acc-exp-cover > * {
+  flex-grow: var(--contentGrow);
 }

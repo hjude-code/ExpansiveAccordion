@@ -11,8 +11,11 @@
  $alignItems = $attributes['alignItems'];
  $styleString .= "--alignItems: $alignItems; ";
 
- $justifyContent = $attributes['alignItems'];
+ $justifyContent = $attributes['justifyContent'];
  $styleString .= "--justifyContent: $justifyContent; ";
+
+$contentGrow = $attributes['contentGrow'];
+ $styleString .= "--contentGrow: $contentGrow; ";
 
  $wrapper_attributes = get_block_wrapper_attributes([
 	'style' => $styleString

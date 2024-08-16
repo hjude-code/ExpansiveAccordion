@@ -25,3 +25,7 @@
   align-self: inherit;
   justify-content: inherit;
 }
+
+.wp-block-exp-acc-exp-cover > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
+  flex-grow: var(--contentGrow);
+}
