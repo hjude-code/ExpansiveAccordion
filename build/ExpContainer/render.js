@@ -2,7 +2,7 @@
 /*!************************************!*\
   !*** ./src/ExpContainer/render.js ***!
   \************************************/
-const accordionGroups = document.querySelectorAll('*:has(>.wp-block-exp-acc-exp-panel)');
+const accordionGroups = document.querySelectorAll('.wp-block-exp-acc-exp-container');
 function calculatePanelSizes(accordionGroup) {
   let groupW = accordionGroup.getBoundingClientRect().width;
   let groupH = accordionGroup.getBoundingClientRect().height;
