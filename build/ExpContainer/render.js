@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
-/*!********************************!*\
-  !*** ./src/ExpPanel/render.js ***!
-  \********************************/
+/*!************************************!*\
+  !*** ./src/ExpContainer/render.js ***!
+  \************************************/
 const accordionGroups = document.querySelectorAll('*:has(>.wp-block-exp-acc-exp-panel)');
 function calculatePanelSizes(accordionGroup) {
   let groupW = accordionGroup.getBoundingClientRect().width;
