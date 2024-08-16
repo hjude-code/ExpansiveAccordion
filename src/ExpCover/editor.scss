@@ -4,13 +4,22 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-exp-acc-exp-cover {
+ .wp-block-exp-acc-exp-cover{
 	display: flex;
-	align-items: stretch;
 }
 
-.wp-block-exp-acc-exp-cover>.block-editor-inner-blocks{
-	flex-grow: 1;
-	align-self: stretch;
+.wp-block-exp-acc-exp-cover>.block-editor-inner-blocks,
+.wp-block-exp-acc-exp-cover>.block-editor-inner-blocks>.block-editor-block-list__layout{
 	width: 100%;
+	height: 100%;
+	flex-direction: inherit;
+	align-items: inherit;
+	justify-content: inherit;
+}
+
+.wp-block-exp-acc-exp-cover>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	display: flex;
+	flex-direction:inherit;
+	align-self: inherit;
+	justify-content: inherit;
 }

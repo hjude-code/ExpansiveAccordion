@@ -92,8 +92,7 @@ export default function Edit({attributes, setAttributes}) {
 								options={[
 									{label:'start', value:'start'},
 									{label:'end', value:'end'},
-									{label:'space-between', value:'space-between'},
-									{label:'space-around', value:'space-around'},
+									{label:'center', value:'center'}
 								]}
 								onChange={ ( newAlign ) => setAttributes({alignItems:newAlign}) }
 							/>
@@ -108,6 +107,7 @@ export default function Edit({attributes, setAttributes}) {
 									{label:'end', value:'end'},
 									{label:'space-between', value:'space-between'},
 									{label:'space-around', value:'space-around'},
+									{label:'center', value:'center'},
 								]}
 								onChange={ ( newJustify ) => setAttributes({justifyContent:newJustify}) }
 							/>
