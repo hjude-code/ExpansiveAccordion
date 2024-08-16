@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "exp-acc/exp-panel",
+	"version": "0.1.0",
+	"title": "Expansive Accorion Panel",
+	"category": "design",
+	"icon": "media-default",
+	"description": "primary panel block that holds other blocks",
+	"supports": {
+		"html": false,
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"position": {
+			"sticky": true
+		},
+		"color": {
+			"button": true,
+			"enableContrastChecker": true,
+			"gradients": true,
+			"heading": true,
+			"link": true,
+			"text": true,
+			"background": true
+		},
+		"renaming": true
+	},
+	"attributes": {
+		"panelHeading":{
+			"type":"string",
+			"default":"Panel Heading"
+		},
+		"ruleColor":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"panelHeadingColorClose":{
+			"type":"string",
+			"default":"#ffffff"
+		},
+		"panelHeadingColorOpen":{
+			"type":"string",
+			"default":"#000000"
+		},
+		"panelBgColor":{
+			"type":"string",
+			"default":"#ffffff"
+		},
+		"headingTagName":{
+			"type":"string",
+			"default":"h2"
+		},
+		"maxPanelHeight":{
+			"type":"string",
+			"default":"100vh"
+		},
+		"panelHeaderPad":{
+			"type":"number",
+			"default":1
+		},
+		"headerPadVal":{
+			"type":"string",
+			"default":"em"
+		}
+	},
+	"textdomain": "expansiveaccorion",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript":"file:./render.js"
+}

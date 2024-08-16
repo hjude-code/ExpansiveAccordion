@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "exp-acc/exp-container",
+  "version": "0.1.0",
+  "title": "Expansive Accorion Container",
+  "category": "design",
+  "icon": "columns",
+  "description": "base container for all expansiveaccorion blocks",
+  "supports": {
+    "html": false,
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "alignWide": true,
+    "color": {
+      "background": true,
+      "button": true,
+      "enableContrastChecker": true,
+      "gradients": true,
+      "heading": true,
+      "link": true,
+      "text": true
+    },
+    "dimensions": {
+      "aspectRatio": true,
+      "minHeight": true
+    },
+    "renaming": true,
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "textAlign": true
+    }
+  },
+  "attributes": {
+    "layoutDirection": {
+      "type": "string",
+      "default": "is-acc-horizontal"
+    },
+    "contentJustify": {
+      "type": "string",
+      "default": "is-acc-justify-start"
+    }
+  },
+  "textdomain": "expansiveaccorion",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

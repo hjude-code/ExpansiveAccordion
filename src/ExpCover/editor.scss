@@ -1,0 +1,16 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-exp-acc-exp-cover {
+	display: flex;
+	align-items: stretch;
+}
+
+.wp-block-exp-acc-exp-cover>.block-editor-inner-blocks{
+	flex-grow: 1;
+	align-self: stretch;
+	width: 100%;
+}

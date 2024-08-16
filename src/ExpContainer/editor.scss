@@ -1,0 +1,35 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-exp-acc-exp-container{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+
+.wp-block-exp-acc-exp-container>.block-editor-inner-blocks>.block-editor-inner-blocks{
+	align-self:stretch;
+	height: 100%;
+}
+.wp-block-exp-acc-exp-container>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	display: flex;
+	align-items: stretch;
+	height: 100%;
+}
+
+.wp-block-exp-acc-exp-container.is-acc-horizontal>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	flex-direction: row;
+}
+.wp-block-exp-acc-exp-container.is-acc-vertical>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	flex-direction: column;
+}
+.wp-block-exp-acc-exp-container.is-acc-justify-start>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	justify-content: start;
+}
+.wp-block-exp-acc-exp-container.is-acc-justify-end>.block-editor-inner-blocks>.block-editor-block-list__layout{
+	justify-content: end;
+}

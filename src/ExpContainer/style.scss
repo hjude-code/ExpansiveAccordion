@@ -1,0 +1,28 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-exp-acc-exp-container {
+	padding: 0px;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	--transTime:0.5s;
+	--transEase:cubic-bezier(.72,.72,.01,.99);
+}
+.wp-block-exp-acc-exp-container.is-acc-justify-start{
+	justify-content: start;
+}
+.wp-block-exp-acc-exp-container.is-acc-justify-end{
+	justify-content: end;
+}
+
+
+@media (min-width:768px) {
+	.wp-block-exp-acc-exp-container.is-acc-horizontal{
+		flex-direction: row !important;
+	}
+}

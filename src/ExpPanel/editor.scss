@@ -1,0 +1,60 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-exp-acc-exp-panel{
+	transition: 0s !important;
+ }
+
+ .wp-block-exp-acc-exp-panel:is(
+	.is-selected, .has-child-selected
+){
+	flex-grow:1;
+	background-color: var(--panelBgColor);
+}
+
+
+ .wp-block-exp-acc-exp-panel::before{
+	display: none !important;	
+}
+
+.wp-block-exp-acc-exp-panel .panel-headings{
+	animation: none !important;
+	transform: none !important;
+}
+
+.wp-block-exp-acc-exp-panel .panel-headings .panel-heading{
+	color:var(--panelHeadingColorClose);
+}
+.wp-block-exp-acc-exp-panel:is(
+	.is-selected, :has(.is-selected)
+) .panel-headings .panel-heading{
+	color:var(--panelHeadingColorOpen);
+	background-color: var(--panelBgColor);
+}
+
+.wp-block-exp-acc-exp-panel .panel-content{
+	display: none;
+	flex-grow:1;
+}
+
+
+
+
+
+
+.wp-block-exp-acc-exp-panel .panel-content{
+	display: none;
+}
+.wp-block-exp-acc-exp-panel:is(
+	.is-selected, :has(.is-selected)
+) :is(
+	.panel-content, .panel
+){
+	width: 100%;
+	transition: 0s !important;
+	display: block;
+	flex-grow: 1;
+}
