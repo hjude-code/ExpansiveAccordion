@@ -24,5 +24,7 @@ $contentGrow = $attributes['contentGrow'];
 
 
 <div <?php echo $wrapper_attributes ?>>
-	<?php echo $content ?>
+	<div class="exp-cover-content">
+		<?php echo $content ?>
+	</div>
 </div>

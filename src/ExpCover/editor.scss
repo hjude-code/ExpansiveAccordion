@@ -13,17 +13,16 @@
 	width: 100%;
 	height: 100%;
 	flex-direction: inherit;
-	align-items: inherit;
-	justify-content: inherit;
 }
 
 .wp-block-exp-acc-exp-cover>.block-editor-inner-blocks>.block-editor-block-list__layout{
 	display: flex;
 	flex-direction:inherit;
-	align-self: inherit;
-	justify-content: inherit;
+	align-self: var(--alignItems);
+	justify-content: var(--justifyContent);
 }
 
 .wp-block-exp-acc-exp-cover>.block-editor-inner-blocks>.block-editor-block-list__layout>*{
 	flex-grow: var(--contentGrow);
 }
+

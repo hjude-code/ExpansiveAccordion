@@ -4,13 +4,9 @@
 .wp-block-exp-acc-exp-cover {
   transition: flex-grow var(--transTime) var(--transEase);
   flex-grow: 1;
-  margin: 0;
   height: var(--minSize);
   min-height: var(--minSize);
-  font-size: 3em;
   display: flex;
-  align-items: var(--alignItems) !important;
-  justify-content: var(--justifyContent) !important;
   flex-direction: column;
 }
 
@@ -18,6 +14,16 @@
   flex-grow: 0;
 }
 
-.wp-block-exp-acc-exp-cover > * {
+.wp-block-exp-acc-exp-cover > .exp-cover-content {
+  flex-grow: 1;
+  margin: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: var(--alignItems) !important;
+  justify-content: var(--justifyContent) !important;
+  flex-direction: inherit;
+}
+
+.wp-block-exp-acc-exp-cover > .exp-cover-content > * {
   flex-grow: var(--contentGrow);
 }
