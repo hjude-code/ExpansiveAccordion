@@ -32,26 +32,8 @@ import './editor.scss';
  */
 export default function Edit({attributes, setAttributes}) {
 
-	const setMinSize = () =>{
+	setAttributes({minSize:`${attributes.minSizeValue}${attributes.minSizeUnit}`})
 
-		if(attributes.minSizeValue < 1){
-			console.log('zero')
-			setAttributes({minSize:'none'})
-		}else{
-			const newMinSize = attributes.minSizeValue + attributes.minSizeUnit
-			setAttributes({minSize:newMinSize})
-		}
-	}
-
-	const setMinSizeValue = (newMinSizeValue) =>{
-		setAttributes({minSizeValue:newMinSizeValue})
-		setMinSize()
-	}
-
-	const setMinSizeUnit = (newMinSizeUnit) =>{
-		setAttributes({minSizeUnit:newMinSizeUnit})
-		setMinSize()
-	}
 	const styleVars = {
 		'--minSize':attributes.minSize,
 		'--alignItems':attributes.alignItems,
@@ -69,8 +51,8 @@ export default function Edit({attributes, setAttributes}) {
 						<PanelRow >
 							<RangeControl
 								label="min collapse size"
-								value={attributes.minSize}
-								onChange={ ( newValue ) => setMinSizeValue(newValue) }
+								value={attributes.minSizeValue}
+								onChange={ ( newValue ) => setAttributes({minSizeValue:newValue}) }
 							/>
 							<SelectControl
 								value={attributes.minSizeType}
@@ -80,8 +62,9 @@ export default function Edit({attributes, setAttributes}) {
 									{label:'em', value:'em'},
 									{label:'vh', value:'vh'},
 									{label:'vw', value:'vw'},
+									{label:'%', value:'%'},
 								]}
-								onChange={ ( newUnit ) => setMinSizeUnit(newUnit) }
+								onChange={ ( newUnit ) => setAttributes({minSizeUnit:newUnit}) }
 							/>
 						</PanelRow>
 					</PanelBody>

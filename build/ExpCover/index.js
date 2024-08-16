@@ -58,31 +58,9 @@ function Edit({
   attributes,
   setAttributes
 }) {
-  const setMinSize = () => {
-    if (attributes.minSizeValue < 1) {
-      console.log('zero');
-      setAttributes({
-        minSize: 'none'
-      });
-    } else {
-      const newMinSize = attributes.minSizeValue + attributes.minSizeUnit;
-      setAttributes({
-        minSize: newMinSize
-      });
-    }
-  };
-  const setMinSizeValue = newMinSizeValue => {
-    setAttributes({
-      minSizeValue: newMinSizeValue
-    });
-    setMinSize();
-  };
-  const setMinSizeUnit = newMinSizeUnit => {
-    setAttributes({
-      minSizeUnit: newMinSizeUnit
-    });
-    setMinSize();
-  };
+  setAttributes({
+    minSize: `${attributes.minSizeValue}${attributes.minSizeUnit}`
+  });
   const styleVars = {
     '--minSize': attributes.minSize,
     '--alignItems': attributes.alignItems,
@@ -103,8 +81,10 @@ function Edit({
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
               label: "min collapse size",
-              value: attributes.minSize,
-              onChange: newValue => setMinSizeValue(newValue)
+              value: attributes.minSizeValue,
+              onChange: newValue => setAttributes({
+                minSizeValue: newValue
+              })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
               value: attributes.minSizeType,
               options: [{
@@ -122,8 +102,13 @@ function Edit({
               }, {
                 label: 'vw',
                 value: 'vw'
+              }, {
+                label: '%',
+                value: '%'
               }],
-              onChange: newUnit => setMinSizeUnit(newUnit)
+              onChange: newUnit => setAttributes({
+                minSizeUnit: newUnit
+              })
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -337,7 +322,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"},"justifyContent":{"type":"string","default":"start"}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 
