@@ -14,8 +14,11 @@
  $justifyContent = $attributes['justifyContent'];
  $styleString .= "--justifyContent: $justifyContent; ";
 
-$contentGrow = $attributes['contentGrow'];
+ $contentGrow = $attributes['contentGrow'];
  $styleString .= "--contentGrow: $contentGrow; ";
+
+ $collapsedEm = $attributes['collapsedEm'];
+ $styleString .= "--collapsedEm:" . $collapsedEm . "em; ";
 
  $wrapper_attributes = get_block_wrapper_attributes([
 	'style' => $styleString

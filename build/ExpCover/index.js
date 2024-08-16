@@ -65,7 +65,8 @@ function Edit({
     '--minSize': attributes.minSize,
     '--alignItems': attributes.alignItems,
     '--justifyContent': attributes.justifyContent,
-    '--contentGrow': attributes.contentGrow
+    '--contentGrow': attributes.contentGrow,
+    '--collapsedEm': attributes.collapsedEm + "em"
   };
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
   // const innerBlocksProps = useInnerBlocksProps({ ...blockProps }, {});
@@ -76,102 +77,104 @@ function Edit({
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: "collapsed min size",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: "Collapsed Settings",
           initialOpen: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-              label: "min collapse size",
-              value: attributes.minSizeValue,
-              onChange: newValue => setAttributes({
-                minSizeValue: newValue
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-              value: attributes.minSizeType,
-              options: [{
-                label: 'px',
-                value: 'px'
-              }, {
-                label: 'rem',
-                value: 'rem'
-              }, {
-                label: 'em',
-                value: 'em'
-              }, {
-                label: 'vh',
-                value: 'vh'
-              }, {
-                label: 'vw',
-                value: 'vw'
-              }, {
-                label: '%',
-                value: '%'
-              }],
-              onChange: newUnit => setAttributes({
-                minSizeUnit: newUnit
-              })
-            })]
-          })
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+            label: "min collapse size",
+            value: attributes.minSizeValue,
+            onChange: newValue => setAttributes({
+              minSizeValue: newValue
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            value: attributes.minSizeType,
+            options: [{
+              label: 'px',
+              value: 'px'
+            }, {
+              label: 'rem',
+              value: 'rem'
+            }, {
+              label: 'em',
+              value: 'em'
+            }, {
+              label: 'vh',
+              value: 'vh'
+            }, {
+              label: 'vw',
+              value: 'vw'
+            }, {
+              label: '%',
+              value: '%'
+            }],
+            onChange: newUnit => setAttributes({
+              minSizeUnit: newUnit
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+            label: "em while collapsed",
+            value: attributes.collapsedEm,
+            onChange: newValue => setAttributes({
+              collapsedEm: newValue
+            }),
+            step: 0.05,
+            separatorType: "fullWidth",
+            min: 0.1,
+            max: 1
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "content grow",
           initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-              value: attributes.contentGrow,
-              onChange: newValue => setAttributes({
-                contentGrow: newValue
-              })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+            value: attributes.contentGrow,
+            onChange: newValue => setAttributes({
+              contentGrow: newValue
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "item alignment",
           initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-              value: attributes.alignItems,
-              options: [{
-                label: 'start',
-                value: 'start'
-              }, {
-                label: 'end',
-                value: 'end'
-              }, {
-                label: 'center',
-                value: 'center'
-              }, {
-                label: 'stretch',
-                value: 'stretch'
-              }],
-              onChange: newAlign => setAttributes({
-                alignItems: newAlign
-              })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            value: attributes.alignItems,
+            options: [{
+              label: 'start',
+              value: 'start'
+            }, {
+              label: 'end',
+              value: 'end'
+            }, {
+              label: 'center',
+              value: 'center'
+            }, {
+              label: 'stretch',
+              value: 'stretch'
+            }],
+            onChange: newAlign => setAttributes({
+              alignItems: newAlign
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "content justification",
           initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-              value: attributes.justifyContent,
-              options: [{
-                label: 'start',
-                value: 'start'
-              }, {
-                label: 'end',
-                value: 'end'
-              }, {
-                label: 'space-between',
-                value: 'space-between'
-              }, {
-                label: 'space-around',
-                value: 'space-around'
-              }, {
-                label: 'center',
-                value: 'center'
-              }],
-              onChange: newJustify => setAttributes({
-                justifyContent: newJustify
-              })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            value: attributes.justifyContent,
+            options: [{
+              label: 'start',
+              value: 'start'
+            }, {
+              label: 'end',
+              value: 'end'
+            }, {
+              label: 'space-between',
+              value: 'space-between'
+            }, {
+              label: 'space-around',
+              value: 'space-around'
+            }, {
+              label: 'center',
+              value: 'center'
+            }],
+            onChange: newJustify => setAttributes({
+              justifyContent: newJustify
             })
           })
         })]
@@ -337,7 +340,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"},"justifyContent":{"type":"string","default":"start"},"contentGrow":{"type":"number","default":0}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"exp-acc/exp-cover","version":"0.1.0","title":"Expansive Accorion Cover","category":"design","icon":"visibility","description":"Cover Block","supports":{"html":false,"background":{"backgroundImage":true,"backgroundSize":true},"color":{"background":true,"button":true,"enableContrastChecker":true,"gradients":true,"heading":true,"link":true,"text":true},"spacing":{"margin":true,"padding":true,"blockGap":true},"typography":{"fontSize":true,"lineHeight":true,"textAlign":true}},"attributes":{"minSize":{"type":"string","default":"10%"},"minSizeValue":{"type":"number","default":10},"minSizeUnit":{"type":"string","default":"%"},"alignItems":{"type":"string","default":"start"},"justifyContent":{"type":"string","default":"start"},"contentGrow":{"type":"number","default":0},"collapsedEm":{"type":"number","default":1}},"textdomain":"expansiveaccorion","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

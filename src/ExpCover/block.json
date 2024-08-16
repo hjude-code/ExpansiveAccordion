@@ -57,6 +57,10 @@
 		"contentGrow":{
 			"type":"number",
 			"default":0
+		},
+		"collapsedEm":{
+			"type":"number",
+			"default":1
 		}
 		
 	},

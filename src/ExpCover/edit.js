@@ -39,6 +39,7 @@ export default function Edit({attributes, setAttributes}) {
 		'--alignItems':attributes.alignItems,
 		'--justifyContent':attributes.justifyContent,
 		'--contentGrow':attributes.contentGrow,
+		'--collapsedEm':attributes.collapsedEm+"em",
 	}
 
 	const blockProps = useBlockProps();
@@ -48,8 +49,7 @@ export default function Edit({attributes, setAttributes}) {
 		<div { ...useBlockProps({style: styleVars}) }>
 			<InspectorControls>
 				<Panel>
-					<PanelBody title="collapsed min size" initialOpen={true}>
-						<PanelRow >
+					<PanelBody title="Collapsed Settings" initialOpen={true}>
 							<RangeControl
 								label="min collapse size"
 								value={attributes.minSizeValue}
@@ -67,18 +67,23 @@ export default function Edit({attributes, setAttributes}) {
 								]}
 								onChange={ ( newUnit ) => setAttributes({minSizeUnit:newUnit}) }
 							/>
-						</PanelRow>
+							<RangeControl
+								label='em while collapsed'
+								value={attributes.collapsedEm}
+								onChange={ ( newValue ) => setAttributes({collapsedEm:newValue}) }
+								step={0.05}
+								separatorType='fullWidth'
+								min={0.1}
+								max={1}
+							/>
 					</PanelBody>
 					<PanelBody title="content grow" initialOpen={false}>
-						<PanelRow >
 							<RangeControl
 								value={attributes.contentGrow}
 								onChange={ ( newValue ) => setAttributes({contentGrow:newValue}) }
 							/>
-						</PanelRow>
 					</PanelBody>
 					<PanelBody title="item alignment" initialOpen={false}>
-						<PanelRow >
 							<SelectControl
 								value={attributes.alignItems}
 								options={[
@@ -89,10 +94,8 @@ export default function Edit({attributes, setAttributes}) {
 								]}
 								onChange={ ( newAlign ) => setAttributes({alignItems:newAlign}) }
 							/>
-						</PanelRow>
 					</PanelBody>
 					<PanelBody title="content justification" initialOpen={false}>
-						<PanelRow >
 							<SelectControl
 								value={attributes.justifyContent}
 								options={[
@@ -104,7 +107,6 @@ export default function Edit({attributes, setAttributes}) {
 								]}
 								onChange={ ( newJustify ) => setAttributes({justifyContent:newJustify}) }
 							/>
-						</PanelRow>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>
