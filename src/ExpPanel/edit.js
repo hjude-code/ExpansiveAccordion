@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, RichText, InnerBlocks, InspectorControls, useSetting } from '@wordpress/block-editor';
-import {PanelRow, Panel, PanelBody, ColorPalette, SelectControl, RangeControl} from '@wordpress/components';
+import {PanelHeader, Panel, PanelBody, ColorPalette, SelectControl, RangeControl} from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -48,7 +48,6 @@ export default function Edit({attributes, setAttributes}) {
 			<InspectorControls>
 				<Panel header="Controls">
 					<PanelBody title="Panel Heading" initialOpen={ true }>
-						<PanelRow>
 							<SelectControl
 								label="Panel Heading Tagname"
 								value={ attributes.headingTagName }
@@ -63,17 +62,13 @@ export default function Edit({attributes, setAttributes}) {
 								]}
 								onChange={ ( newHeadingTag ) => setAttributes({headingTagName:newHeadingTag}) }
 							/>
-						</PanelRow>
-					</PanelBody>
-					<PanelBody title="Header Padding" initialOpen={ false }>
-						<PanelRow>
 							<RangeControl
-								label='Header Padding'
+								label='Header Padding Value'
 								value={attributes.panelHeaderPad}
 								onChange={(value) => setAttributes({panelHeaderPad:value}) }
 							/>
 							<SelectControl
-								label="value type"
+								label="Heading padding Unit"
 								value={ attributes.headerPadVal }
 								options={[
 									{label:'px', value:'px'},
@@ -84,10 +79,21 @@ export default function Edit({attributes, setAttributes}) {
 								]}
 								onChange={ ( newHeaderPadVal ) => setAttributes({headerPadVal:newHeaderPadVal}) }
 							/>
-						</PanelRow>
+							<PanelHeader label="Panel Heading Color - open"/>
+							<ColorPalette
+
+								value={ attributes.panelHeadingColorOpen }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({panelHeadingColorOpen:newColor}) }
+							/>
+							<PanelHeader label="Panel Heading Color - closed"/>
+							<ColorPalette
+								value={ attributes.panelHeadingColorClose }
+								colors={[...useSetting('color.palette')]}
+								onChange={ ( newColor ) => setAttributes({panelHeadingColorClose:newColor}) }
+							/>
 					</PanelBody>
 					<PanelBody title="Panel Background Color" initialOpen={ false }>
-						<PanelRow>
 							<ColorPalette
 								header="Panel Background Color"
 								label="Panel Background Color"
@@ -95,34 +101,13 @@ export default function Edit({attributes, setAttributes}) {
 								colors={[...useSetting('color.palette')]}
 								onChange={ ( newColor ) => setAttributes({panelBgColor:newColor}) }
 							/>
-						</PanelRow>
-					</PanelBody>
-					<PanelBody title="Panel Heading Color - Open" initialOpen={ false }>
-						<PanelRow>
-							<ColorPalette
-								value={ attributes.panelHeadingColorOpen }
-								colors={[...useSetting('color.palette')]}
-								onChange={ ( newColor ) => setAttributes({panelHeadingColorOpen:newColor}) }
-							/>
-						</PanelRow>
-					</PanelBody>
-					<PanelBody title="Panel Heading Color - Closed" initialOpen={ false }>
-						<PanelRow>
-							<ColorPalette
-								value={ attributes.panelHeadingColorClose }
-								colors={[...useSetting('color.palette')]}
-								onChange={ ( newColor ) => setAttributes({panelHeadingColorClose:newColor}) }
-							/>
-						</PanelRow>
 					</PanelBody>
 					<PanelBody title="Rules" initialOpen={ false }>
-						<PanelRow>
 							<ColorPalette
 								value={ attributes.ruleColor }
 								colors={[...useSetting('color.palette')]}
 								onChange={ ( newColor ) => setAttributes({ruleColor:newColor}) }
 							/>
-						</PanelRow>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>

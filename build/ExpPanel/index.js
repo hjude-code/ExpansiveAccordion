@@ -74,122 +74,102 @@ function Edit({
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
         header: "Controls",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Panel Heading",
           initialOpen: true,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-              label: "Panel Heading Tagname",
-              value: attributes.headingTagName,
-              options: [{
-                label: 'h1',
-                value: 'h1'
-              }, {
-                label: 'h2',
-                value: 'h2'
-              }, {
-                label: 'h3',
-                value: 'h3'
-              }, {
-                label: 'h4',
-                value: 'h4'
-              }, {
-                label: 'h5',
-                value: 'h5'
-              }, {
-                label: 'h6',
-                value: 'h6'
-              }, {
-                label: 'p',
-                value: 'p'
-              }],
-              onChange: newHeadingTag => setAttributes({
-                headingTagName: newHeadingTag
-              })
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            label: "Panel Heading Tagname",
+            value: attributes.headingTagName,
+            options: [{
+              label: 'h1',
+              value: 'h1'
+            }, {
+              label: 'h2',
+              value: 'h2'
+            }, {
+              label: 'h3',
+              value: 'h3'
+            }, {
+              label: 'h4',
+              value: 'h4'
+            }, {
+              label: 'h5',
+              value: 'h5'
+            }, {
+              label: 'h6',
+              value: 'h6'
+            }, {
+              label: 'p',
+              value: 'p'
+            }],
+            onChange: newHeadingTag => setAttributes({
+              headingTagName: newHeadingTag
             })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: "Header Padding",
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-              label: "Header Padding",
-              value: attributes.panelHeaderPad,
-              onChange: value => setAttributes({
-                panelHeaderPad: value
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-              label: "value type",
-              value: attributes.headerPadVal,
-              options: [{
-                label: 'px',
-                value: 'px'
-              }, {
-                label: 'rem',
-                value: 'rem'
-              }, {
-                label: 'em',
-                value: 'em'
-              }, {
-                label: 'vh',
-                value: 'vh'
-              }, {
-                label: 'vw',
-                value: 'vw'
-              }],
-              onChange: newHeaderPadVal => setAttributes({
-                headerPadVal: newHeaderPadVal
-              })
-            })]
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+            label: "Header Padding Value",
+            value: attributes.panelHeaderPad,
+            onChange: value => setAttributes({
+              panelHeaderPad: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+            label: "Heading padding Unit",
+            value: attributes.headerPadVal,
+            options: [{
+              label: 'px',
+              value: 'px'
+            }, {
+              label: 'rem',
+              value: 'rem'
+            }, {
+              label: 'em',
+              value: 'em'
+            }, {
+              label: 'vh',
+              value: 'vh'
+            }, {
+              label: 'vw',
+              value: 'vw'
+            }],
+            onChange: newHeaderPadVal => setAttributes({
+              headerPadVal: newHeaderPadVal
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelHeader, {
+            label: "Panel Heading Color - open"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+            value: attributes.panelHeadingColorOpen,
+            colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
+            onChange: newColor => setAttributes({
+              panelHeadingColorOpen: newColor
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelHeader, {
+            label: "Panel Heading Color - closed"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+            value: attributes.panelHeadingColorClose,
+            colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
+            onChange: newColor => setAttributes({
+              panelHeadingColorClose: newColor
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Panel Background Color",
           initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-              header: "Panel Background Color",
-              label: "Panel Background Color",
-              value: attributes.panelBgColor,
-              colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
-              onChange: newColor => setAttributes({
-                panelBgColor: newColor
-              })
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: "Panel Heading Color - Open",
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-              value: attributes.panelHeadingColorOpen,
-              colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
-              onChange: newColor => setAttributes({
-                panelHeadingColorOpen: newColor
-              })
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          title: "Panel Heading Color - Closed",
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-              value: attributes.panelHeadingColorClose,
-              colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
-              onChange: newColor => setAttributes({
-                panelHeadingColorClose: newColor
-              })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+            header: "Panel Background Color",
+            label: "Panel Background Color",
+            value: attributes.panelBgColor,
+            colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
+            onChange: newColor => setAttributes({
+              panelBgColor: newColor
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Rules",
           initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
-              value: attributes.ruleColor,
-              colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
-              onChange: newColor => setAttributes({
-                ruleColor: newColor
-              })
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+            value: attributes.ruleColor,
+            colors: [...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useSetting)('color.palette')],
+            onChange: newColor => setAttributes({
+              ruleColor: newColor
             })
           })
         })]
